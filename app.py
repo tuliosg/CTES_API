@@ -1,5 +1,7 @@
 from flask import Flask, jsonify, request
 
+app = Flask(__name__)
+
 USUARIOS = [
     {
         'cpf': 10000000000,
@@ -7,8 +9,6 @@ USUARIOS = [
         'data_nascimento': '20-12-2002'
     }
 ]
-
-app = Flask(__name__)
 
 @app.route("/usuarios/", methods=["POST"])
 def criar_usuario():
